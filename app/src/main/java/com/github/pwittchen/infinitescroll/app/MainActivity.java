@@ -71,25 +71,24 @@ public class MainActivity extends AppCompatActivity {
     layoutManager = new LinearLayoutManager(this);
     recyclerView.setLayoutManager(layoutManager);
     recyclerView.setAdapter(new MyAdapter(items.subList(page, MAX_ITEMS_PER_REQUEST)));
-    setInfiniteScrollListener();
+    recyclerView.addOnScrollListener(createInfiniteScrollListener());
   }
 
-  private void setInfiniteScrollListener() {
-    recyclerView.addOnScrollListener(
-        new InfiniteScrollListener(MAX_ITEMS_PER_REQUEST, layoutManager) {
-          @Override public void onScrolledToEnd(final int firstVisibleItemPosition) {
-            simulateLoading();
-            int start = ++page * MAX_ITEMS_PER_REQUEST;
-            final boolean allItemsLoaded = start >= items.size();
-            if (allItemsLoaded) {
-              progressBar.setVisibility(View.GONE);
-            } else {
-              int end = start + MAX_ITEMS_PER_REQUEST;
-              final List<String> items = getItemsToBeLoaded(start, end);
-              refreshView(recyclerView, new MyAdapter(items), firstVisibleItemPosition);
-            }
-          }
-        });
+  @NonNull private InfiniteScrollListener createInfiniteScrollListener() {
+    return new InfiniteScrollListener(MAX_ITEMS_PER_REQUEST, layoutManager) {
+      @Override public void onScrolledToEnd(final int firstVisibleItemPosition) {
+        simulateLoading();
+        int start = ++page * MAX_ITEMS_PER_REQUEST;
+        final boolean allItemsLoaded = start >= items.size();
+        if (allItemsLoaded) {
+          progressBar.setVisibility(View.GONE);
+        } else {
+          int end = start + MAX_ITEMS_PER_REQUEST;
+          final List<String> items = getItemsToBeLoaded(start, end);
+          refreshView(recyclerView, new MyAdapter(items), firstVisibleItemPosition);
+        }
+      }
+    };
   }
 
   @NonNull private List<String> getItemsToBeLoaded(int start, int end) {
