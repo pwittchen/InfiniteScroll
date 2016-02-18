@@ -20,6 +20,13 @@ For a long time I couldn't find the right implementation of the infinite scroll 
 Usage
 -----
 
+Create necessary fields in your `Activity`:
+
+```java
+public RecyclerView recyclerView;
+private LinearLayoutManager layoutManager;
+```
+
 Create new `InfiniteScrollListener`:
 
 ```java
@@ -40,9 +47,6 @@ private InfiniteScrollListener createInfiniteScrollListener() {
 Initialize `RecyclerView` and `LinearLayoutManager` in your `Activity`:
 
 ```java
-public RecyclerView recyclerView;
-private LinearLayoutManager layoutManager;
-
 @Override protected void onCreate(Bundle savedInstanceState) {
   recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
