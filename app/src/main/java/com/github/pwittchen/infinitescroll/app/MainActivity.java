@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void initRecyclerView() {
-    recyclerView.setHasFixedSize(true);
     layoutManager = new LinearLayoutManager(this);
+    recyclerView.setHasFixedSize(true);
     recyclerView.setLayoutManager(layoutManager);
     recyclerView.setAdapter(new MyAdapter(items.subList(page, MAX_ITEMS_PER_REQUEST)));
     recyclerView.addOnScrollListener(createInfiniteScrollListener());
