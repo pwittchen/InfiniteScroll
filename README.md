@@ -1,6 +1,17 @@
 # InfiniteScroll [![Build Status](https://travis-ci.org/pwittchen/InfiniteScroll.svg?branch=master)](https://travis-ci.org/pwittchen/InfiniteScroll)
 [WIP] InfiniteScrollListener for RecyclerView in Android
 
+Contents
+--------
+- [Motivation](#motivation)
+- [Usage](#usage)
+- [Example](#example)
+- [Download](#download)
+- [Tests](#tests)
+- [Code style](#code-style)
+- [Static Code Analysis](#static-code-analysis)
+- [License](#license)
+
 Motivation
 ----------
 
