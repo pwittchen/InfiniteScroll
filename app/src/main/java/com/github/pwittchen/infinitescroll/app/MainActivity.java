@@ -22,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import com.github.pwittchen.infinitescroll.library.InfiniteScrollListener;
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         try {
           Thread.sleep(SIMULATED_LOADING_TIME_IN_MS);
         } catch (InterruptedException e) {
-          e.printStackTrace();
+          Log.e("MainActivity", e.getMessage());
         }
         return null;
       }
