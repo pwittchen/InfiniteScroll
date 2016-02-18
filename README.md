@@ -15,7 +15,7 @@ Contents
 Motivation
 ----------
 
-For a long time, I couldn't find the right implementation of the infinite scroll AKA endless scroll for Android. A few solutions I've found weren't production ready, weren't working correctly or had too many features. I wanted to have small, easy and flexible solution to implement infinite scroll for Android, which works with `RecyclerView` from the newest Android API. That's why this project was created.
+For a long time I couldn't find the right implementation of the infinite scroll AKA endless scroll for Android. A few solutions I've found weren't production ready, weren't working correctly or had too many features. I wanted to have small, easy and flexible solution to implement infinite scroll for Android, which works with `RecyclerView` from the newest Android API. That's why this project was created.
 
 Usage
 -----
