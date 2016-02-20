@@ -1,6 +1,8 @@
 # InfiniteScroll [![Build Status](https://travis-ci.org/pwittchen/InfiniteScroll.svg?branch=master)](https://travis-ci.org/pwittchen/InfiniteScroll)
 [WIP] InfiniteScrollListener for RecyclerView in Android
 
+JavaDoc is available at: http://pwittchen.github.io/InfiniteScroll/
+
 Contents
 --------
 - [Motivation](#motivation)
