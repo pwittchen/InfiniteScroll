@@ -40,7 +40,7 @@ Create new `InfiniteScrollListener`:
 
 ```java
 private InfiniteScrollListener createInfiniteScrollListener() {
-  return new InfiniteScrollListener(MAX_ITEMS_PER_REQUEST, layoutManager) {
+  return new InfiniteScrollListener(maxItemsPerRequest, layoutManager) {
     @Override public void onScrolledToEnd(final int firstVisibleItemPosition) {
       // load your items here
       // logic of loading items will be different depending on your specific use case
