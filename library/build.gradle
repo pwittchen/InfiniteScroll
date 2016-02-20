@@ -27,3 +27,9 @@ dependencies {
   testCompile 'com.google.truth:truth:0.25'
   testCompile 'org.mockito:mockito-core:1.10.19'
 }
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.2.1'
+}
+
+apply from: '../maven_push.gradle'
