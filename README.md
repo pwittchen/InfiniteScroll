@@ -24,7 +24,7 @@ Sample app can be found in `app` directory.
 
 Below, you can see an animation presenting, how sample application works.
 
-[![Demo](https://raw.githubusercontent.com/pwittchen/InfiniteScroll/master/demo.gif)]
+![Demo](https://raw.githubusercontent.com/pwittchen/InfiniteScroll/master/demo.gif)
 
 Usage
 -----
