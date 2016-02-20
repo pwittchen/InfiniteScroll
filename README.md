@@ -73,6 +73,8 @@ Initialize `RecyclerView` and `LinearLayoutManager` in your `Activity`:
 }
 ```
 
+If you want to display loading progress, you should add additional view for it, show it while loading starts and hide it when loading is finished. Check exemplary app in this repository to see concrete solution.
+
 That's it!
 
 Download
