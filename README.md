@@ -4,8 +4,8 @@
 Contents
 --------
 - [Motivation](#motivation)
-- [Usage](#usage)
 - [Example](#example)
+- [Usage](#usage)
 - [Download](#download)
 - [Tests](#tests)
 - [Code style](#code-style)
@@ -16,6 +16,15 @@ Motivation
 ----------
 
 For a long time I couldn't find the right implementation of the infinite scroll AKA endless scroll for Android. A few solutions I've found weren't production ready, weren't working correctly or had too many features. I wanted to have small, easy and flexible solution to implement infinite scroll for Android, which works with `RecyclerView` from the newest Android API. That's why this project was created.
+
+Example
+-------
+
+Sample app can be found in `app` directory.
+
+Below, you can see an animation presenting, how sample application works.
+
+[![Demo](https://raw.githubusercontent.com/pwittchen/InfiniteScroll/master/demo.gif)]
 
 Usage
 -----
@@ -63,11 +72,6 @@ Initialize `RecyclerView` and `LinearLayoutManager` in your `Activity`:
 ```
 
 That's it!
-
-Example
--------
-
-Sample app can be found in `app` directory.
 
 Download
 --------
