@@ -10,8 +10,7 @@
       android:theme="@style/AppTheme">
     <activity
         android:label="@string/app_name"
-        android:name="com.github.pwittchen.infinitescroll.app.MainActivity"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:name="com.github.pwittchen.infinitescroll.app.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 

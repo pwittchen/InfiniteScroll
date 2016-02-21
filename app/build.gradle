@@ -6,7 +6,7 @@ android {
 
   defaultConfig {
     applicationId "pwittchen.github.com.infinitescroll"
-    minSdkVersion 15
+    minSdkVersion 19
     targetSdkVersion 23
     versionCode 1
     versionName "1.0"
@@ -28,4 +28,5 @@ dependencies {
   compile project(':library')
   compile 'com.android.support:appcompat-v7:23.1.1'
   compile 'com.android.support:design:23.1.1'
+  compile 'com.android.support:recyclerview-v7:23.1.1'
 }
