@@ -18,21 +18,24 @@ package com.github.pwittchen.infinitescroll.library;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import org.junit.Test;
-import org.mockito.Mockito;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
-public class InfiniteScrollListenerTest {
+@RunWith(MockitoJUnitRunner.class) public class InfiniteScrollListenerTest {
+
+  @Mock private LinearLayoutManager manager;
 
   @Test(expected = IllegalArgumentException.class)
   public void testShouldNotSetInfiniteScrollListenerWhenLayoutManagerIsNull() {
     // given
     int itemsPerRequest = 1;
-    LinearLayoutManager manager = null;
 
     // when
-    createInfiniteScrollListener(manager, itemsPerRequest);
+    createListener(null, itemsPerRequest);
 
     // then throw an exception
   }
@@ -41,10 +44,9 @@ public class InfiniteScrollListenerTest {
   public void testShouldNotSetInfiniteScrollListenerWhenItemsPerRequestAreEqualToZero() {
     // given
     int itemsPerRequest = 0;
-    LinearLayoutManager manager = Mockito.mock(LinearLayoutManager.class);
 
     // when
-    createInfiniteScrollListener(manager, itemsPerRequest);
+    createListener(manager, itemsPerRequest);
 
     // then throw an exception
   }
@@ -53,22 +55,20 @@ public class InfiniteScrollListenerTest {
   public void testShouldNotSetInfiniteScrollListenerWhenItemsPerRequestAreLowerThanZero() {
     // given
     int itemsPerRequest = -1;
-    LinearLayoutManager manager = Mockito.mock(LinearLayoutManager.class);
 
     // when
-    createInfiniteScrollListener(manager, itemsPerRequest);
+    createListener(manager, itemsPerRequest);
 
     // then throw an exception
   }
 
   @Test public void testCanLoadMoreItemsLogicIsCorrect() {
     // given
-    LinearLayoutManager manager = Mockito.mock(LinearLayoutManager.class);
     int visibleItemsCount = 10;
     int totalItemsCount = 150;
     int pastVisibleItemsCount = 20;
     int itemsPerRequest = 100;
-    InfiniteScrollListener listener = createInfiniteScrollListener(manager, itemsPerRequest);
+    InfiniteScrollListener listener = createListener(manager, itemsPerRequest);
 
     // when
     when(manager.getChildCount()).thenReturn(visibleItemsCount);
@@ -84,12 +84,11 @@ public class InfiniteScrollListenerTest {
 
   @Test public void testCanLoadMoreItemsShouldBeTrue() {
     // given
-    LinearLayoutManager manager = Mockito.mock(LinearLayoutManager.class);
     int visibleItemsCount = 10;
     int totalItemsCount = 20;
     int pastVisibleItemsCount = 15;
     int itemsPerRequest = 10;
-    InfiniteScrollListener listener = createInfiniteScrollListener(manager, itemsPerRequest);
+    InfiniteScrollListener listener = createListener(manager, itemsPerRequest);
 
     // when
     when(manager.getChildCount()).thenReturn(visibleItemsCount);
@@ -103,12 +102,11 @@ public class InfiniteScrollListenerTest {
 
   @Test public void testCanLoadMoreItemsShouldBeFalse() {
     // given
-    LinearLayoutManager manager = Mockito.mock(LinearLayoutManager.class);
     int visibleItemsCount = 10;
     int totalItemsCount = 30;
     int pastVisibleItemsCount = 15;
     int itemsPerRequest = 100;
-    InfiniteScrollListener listener = createInfiniteScrollListener(manager, itemsPerRequest);
+    InfiniteScrollListener listener = createListener(manager, itemsPerRequest);
 
     // when
     when(manager.getChildCount()).thenReturn(visibleItemsCount);
@@ -121,8 +119,7 @@ public class InfiniteScrollListenerTest {
   }
 
   @NonNull
-  private InfiniteScrollListener createInfiniteScrollListener(final LinearLayoutManager manager,
-      final int itemsPerRequest) {
+  private InfiniteScrollListener createListener(LinearLayoutManager manager, int itemsPerRequest) {
     return new InfiniteScrollListener(itemsPerRequest, manager) {
       @Override public void onScrolledToEnd(int firstVisibleItemPosition) {
       }
