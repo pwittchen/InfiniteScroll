@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
   private LinearLayoutManager layoutManager;
   private List<String> items;
-  private int page = 0;
+  private int page;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
     setSupportActionBar(toolbar);
   }
 
-  private List<String> createItems() {
-    List<String> items = new LinkedList<>();
+  private static List<String> createItems() {
+    List<String> itemsLocal = new LinkedList<>();
     for (int i = 0; i < NUMBER_OF_ITEMS; i++) {
       String prefix = i < 10 ? "0" : "";
-      items.add("Item #".concat(prefix).concat(String.valueOf(i)));
+      itemsLocal.add("Item #".concat(prefix).concat(String.valueOf(i)));
     }
-    return items;
+    return itemsLocal;
   }
 
   private void initViews() {
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
           progressBar.setVisibility(View.GONE);
         } else {
           int end = start + MAX_ITEMS_PER_REQUEST;
-          final List<String> items = getItemsToBeLoaded(start, end);
-          refreshView(recyclerView, new MyAdapter(items), firstVisibleItemPosition);
+          final List<String> itemsLocal = getItemsToBeLoaded(start, end);
+          refreshView(recyclerView, new MyAdapter(itemsLocal), firstVisibleItemPosition);
         }
       }
     };
@@ -95,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
   @NonNull private List<String> getItemsToBeLoaded(int start, int end) {
     List<String> newItems = items.subList(start, end);
     final List<String> oldItems = ((MyAdapter) recyclerView.getAdapter()).getItems();
-    final List<String> items = new LinkedList<>();
-    items.addAll(oldItems);
-    items.addAll(newItems);
-    return items;
+    final List<String> itemsLocal = new LinkedList<>();
+    itemsLocal.addAll(oldItems);
+    itemsLocal.addAll(newItems);
+    return itemsLocal;
   }
 
   /**
