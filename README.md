@@ -12,6 +12,7 @@ Contents
 - [Tests](#tests)
 - [Code style](#code-style)
 - [Static Code Analysis](#static-code-analysis)
+- [Who is using this library?](#who-is-using-this-library)
 - [License](#license)
 
 Motivation
@@ -124,6 +125,14 @@ To run Static Code Analysis, type:
 ```
 
 Reports from analysis are generated in `library/build/reports/` directory.
+
+Who is using this library?
+-------------------------
+
+- [Noute](https://play.google.com/store/apps/details?id=com.github.pierry.noute)
+- and more...
+
+Are you using this library in your app and want to be listed here? Send me a Pull Request or an e-mail to piotr@wittchen.biz.pl
 
 License
 -------
