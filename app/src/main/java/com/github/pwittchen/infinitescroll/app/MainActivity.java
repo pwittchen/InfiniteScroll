@@ -17,14 +17,14 @@ package com.github.pwittchen.infinitescroll.app;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.github.pwittchen.infinitescroll.library.InfiniteScrollListener;
 import java.util.LinkedList;
 import java.util.List;
@@ -75,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
     recyclerView.addOnScrollListener(createInfiniteScrollListener());
   }
 
-  @NonNull private InfiniteScrollListener createInfiniteScrollListener() {
+  @NonNull
+  private InfiniteScrollListener createInfiniteScrollListener() {
     return new InfiniteScrollListener(MAX_ITEMS_PER_REQUEST, layoutManager) {
       @Override public void onScrolledToEnd(final int firstVisibleItemPosition) {
         simulateLoading();
