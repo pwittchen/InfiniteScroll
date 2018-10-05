@@ -15,7 +15,6 @@
  */
 package com.github.pwittchen.infinitescroll.library;
 
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 

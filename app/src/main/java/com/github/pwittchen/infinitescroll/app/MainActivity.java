@@ -75,8 +75,7 @@ public class MainActivity extends AppCompatActivity {
     recyclerView.addOnScrollListener(createInfiniteScrollListener());
   }
 
-  @NonNull
-  private InfiniteScrollListener createInfiniteScrollListener() {
+  @NonNull private InfiniteScrollListener createInfiniteScrollListener() {
     return new InfiniteScrollListener(MAX_ITEMS_PER_REQUEST, layoutManager) {
       @Override public void onScrolledToEnd(final int firstVisibleItemPosition) {
         simulateLoading();
