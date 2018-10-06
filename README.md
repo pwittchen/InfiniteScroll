@@ -18,7 +18,7 @@ Contents
 Motivation
 ----------
 
-For a long time I couldn't find the right implementation of the infinite scroll AKA endless scroll for Android. A few solutions I've found weren't production ready, weren't working correctly or had too many features. I wanted to have small, easy and flexible solution to implement infinite scroll for Android, which works with `RecyclerView` from the newest Android API. That's why this project was created. If you want to read more, check out <a href="http://blog.wittchen.biz.pl/infinite-scroll-for-recyclerview-in-android/">an article about this project on my blog</a>.
+For a long time I couldn't find the right implementation of the infinite scroll AKA endless scroll for Android. A few solutions I've found weren't production ready, weren't working correctly or had too many features. I wanted to have small, easy and flexible solution to implement infinite scroll for Android, which works with `RecyclerView` from the newest Android API. That's why this project was created.
 
 Examples
 --------
@@ -132,7 +132,7 @@ Who is using this library?
 - [Noute](https://play.google.com/store/apps/details?id=com.github.pierry.noute)
 - and more...
 
-Are you using this library in your app and want to be listed here? Send me a Pull Request or an e-mail to piotr@wittchen.biz.pl
+Are you using this library in your app and want to be listed here? Send me a Pull Request or an e-mail to piotr@wittchen.io
 
 License
 -------
