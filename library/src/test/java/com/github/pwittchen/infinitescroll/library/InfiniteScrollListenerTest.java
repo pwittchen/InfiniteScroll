@@ -15,19 +15,21 @@
  */
 package com.github.pwittchen.infinitescroll.library;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class) public class InfiniteScrollListenerTest {
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
-  @Mock private LinearLayoutManager manager;
+@RunWith(MockitoJUnitRunner.class)
+public class InfiniteScrollListenerTest {
+
+  @Mock
+  private LinearLayoutManager manager;
 
   @Test(expected = IllegalArgumentException.class)
   public void testShouldNotSetInfiniteScrollListenerWhenLayoutManagerIsNull() {
@@ -62,7 +64,8 @@ import static org.mockito.Mockito.when;
     // then throw an exception
   }
 
-  @Test public void testCanLoadMoreItemsLogicIsCorrect() {
+  @Test
+  public void testCanLoadMoreItemsLogicIsCorrect() {
     // given
     int visibleItemsCount = 10;
     int totalItemsCount = 150;
@@ -82,7 +85,8 @@ import static org.mockito.Mockito.when;
     assertThat(canLoadMoreItems).isEqualTo(canLoadMoreItemsExpected);
   }
 
-  @Test public void testCanLoadMoreItemsShouldBeTrue() {
+  @Test
+  public void testCanLoadMoreItemsShouldBeTrue() {
     // given
     int visibleItemsCount = 10;
     int totalItemsCount = 20;
@@ -100,7 +104,8 @@ import static org.mockito.Mockito.when;
     assertThat(canLoadMoreItems).isTrue();
   }
 
-  @Test public void testCanLoadMoreItemsShouldBeFalse() {
+  @Test
+  public void testCanLoadMoreItemsShouldBeFalse() {
     // given
     int visibleItemsCount = 10;
     int totalItemsCount = 30;
@@ -121,7 +126,8 @@ import static org.mockito.Mockito.when;
   @NonNull
   private InfiniteScrollListener createListener(LinearLayoutManager manager, int itemsPerRequest) {
     return new InfiniteScrollListener(itemsPerRequest, manager) {
-      @Override public void onScrolledToEnd(int firstVisibleItemPosition) {
+      @Override
+      public void onScrolledToEnd(int firstVisibleItemPosition) {
       }
     };
   }

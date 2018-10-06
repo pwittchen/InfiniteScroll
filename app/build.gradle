@@ -1,17 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 23
-  buildToolsVersion "23.0.1"
+  compileSdkVersion 28
 
   defaultConfig {
     applicationId "pwittchen.github.com.infinitescroll"
     minSdkVersion 19
-    targetSdkVersion 23
+    targetSdkVersion 28
     versionCode 1
     versionName "1.0"
   }
-  
+
   buildTypes {
     release {
       minifyEnabled false
@@ -25,8 +24,7 @@ android {
 }
 
 dependencies {
-  compile project(':library')
-  compile 'com.android.support:appcompat-v7:23.1.1'
-  compile 'com.android.support:design:23.1.1'
-  compile 'com.android.support:recyclerview-v7:23.1.1'
+  implementation project(':library')
+  implementation 'androidx.appcompat:appcompat:1.0.0'
+  implementation 'com.google.android.material:material:1.0.0'
 }
