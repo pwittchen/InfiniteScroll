@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 28
+  compileSdkVersion rootProject.ext.compileSdkVersion
 
   defaultConfig {
     applicationId "pwittchen.github.com.infinitescroll"
-    minSdkVersion 19
-    targetSdkVersion 28
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.compileSdkVersion
     versionCode 1
     versionName "1.0"
   }
@@ -21,10 +21,11 @@ android {
   lintOptions {
     abortOnError false
   }
+  buildToolsVersion '28.0.2'
 }
 
 dependencies {
   implementation project(':library')
-  implementation 'androidx.appcompat:appcompat:1.0.0'
-  implementation 'com.google.android.material:material:1.0.0'
+  implementation deps.appcompat
+  implementation deps.material
 }

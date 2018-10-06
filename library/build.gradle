@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../config/quality.gradle'
+apply from: '../maven_push.gradle'
 
 android {
   compileSdkVersion 28
@@ -9,7 +10,6 @@ android {
     targetSdkVersion 28
     versionCode 1
     versionName "1.0"
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
     release {
@@ -20,16 +20,10 @@ android {
 }
 
 dependencies {
-  implementation 'androidx.appcompat:appcompat:1.0.0'
-  implementation 'com.google.android.material:material:1.0.0'
+  implementation deps.appcompat
+  implementation deps.material
 
-  testImplementation 'junit:junit:4.12'
-  testImplementation 'com.google.truth:truth:0.25'
-  testImplementation 'org.mockito:mockito-core:2.22.0'
+  testImplementation deps.junit
+  testImplementation deps.truth
+  testImplementation deps.mockito
 }
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '4.6.0'
-}
-
-apply from: '../maven_push.gradle'
