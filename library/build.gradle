@@ -3,11 +3,12 @@ apply from: '../config/quality.gradle'
 apply from: '../maven_push.gradle'
 
 android {
-  compileSdkVersion 28
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    minSdkVersion 15
-    targetSdkVersion 28
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.compileSdkVersion
     versionCode 1
     versionName "1.0"
   }
