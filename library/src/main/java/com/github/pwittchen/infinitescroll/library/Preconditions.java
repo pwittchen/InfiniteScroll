@@ -15,6 +15,7 @@
  */
 package com.github.pwittchen.infinitescroll.library;
 
+@SuppressWarnings("PMD")
 public class Preconditions {
   public static void checkNotNull(Object object, String message) {
     if (object == null) {

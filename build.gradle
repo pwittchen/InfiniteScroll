@@ -3,10 +3,9 @@
 apply plugin: 'io.codearte.nexus-staging'
 
 ext {
-  minSdkVersion = 19
+  minSdkVersion = 23
   compileSdkVersion = 28
-  buildToolsVersion = '28.0.2'
-  gradleVersion = '4.6.0'
+  buildToolsVersion = '28.0.3'
 }
 
 ext.deps = [ appcompat  : 'androidx.appcompat:appcompat:1.0.2',
@@ -26,8 +25,8 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.0'
-    classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.11.0"
+    classpath 'com.android.tools.build:gradle:3.5.0'
+    classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.21.0"
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
@@ -61,12 +60,4 @@ nexusStaging {
   stagingProfileId = "9add401d06ecc9"
   username = getRepositoryUsername()
   password = getRepositoryPassword()
-}
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}
-
-task wrapper(type: Wrapper) {
-  gradleVersion = rootProject.ext.gradleVersion
 }
