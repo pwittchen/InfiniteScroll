@@ -1,3 +1,10 @@
+v. 0.0.3
+--------
+*? Mar 2020*
+
+- updated project dependencies
+- updated build configuration
+
 v. 0.0.2
 --------
 *6 Oct 2018*
