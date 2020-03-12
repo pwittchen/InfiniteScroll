@@ -83,13 +83,17 @@ That's it!
 Download
 --------
 
+Latest version: ![Maven Central](https://img.shields.io/maven-central/v/com.github.pwittchen/infinitescroll.svg?style=flat)
+
+replace `x.y.z` with the latest version
+
 You can depend on the library through Maven:
 
 ```xml
 <dependency>
     <groupId>com.github.pwittchen</groupId>
     <artifactId>infinitescroll</artifactId>
-    <version>0.0.2</version>
+    <version>x.y.z</version>
 </dependency>
 ```
 
@@ -97,7 +101,7 @@ or through Gradle:
 
 ```groovy
 dependencies {
-  compile 'com.github.pwittchen:infinitescroll:0.0.2'
+  compile 'com.github.pwittchen:infinitescroll:x.y.z'
 }
 ```
 
