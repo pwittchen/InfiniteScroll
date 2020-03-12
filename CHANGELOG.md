@@ -1,6 +1,6 @@
 v. 0.0.3
 --------
-*? Mar 2020*
+*12 Mar 2020*
 
 - updated project dependencies
 - updated build configuration
