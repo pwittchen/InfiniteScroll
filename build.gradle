@@ -12,7 +12,7 @@ ext.deps = [ appcompat  : 'androidx.appcompat:appcompat:1.1.0',
              material   : 'com.google.android.material:material:1.1.0',
              junit      : 'junit:junit:4.13',
              truth      : 'com.google.truth:truth:1.0.1',
-             mockito    : 'org.mockito:mockito-core:3.3.3']
+             mockito    : 'org.mockito:mockito-core:3.4.0']
 
 buildscript {
   repositories {
